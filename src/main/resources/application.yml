@@ -1,5 +1,18 @@
-server:
-  port: 8080
 spring:
-  application:
-    name: demo
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8080
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  configuration:
+    database-id: mysql
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'
