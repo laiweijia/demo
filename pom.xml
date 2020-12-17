@@ -70,10 +70,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -93,14 +93,121 @@
         </dependencies>
     </dependencyManagement>
 
+
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- proguard混淆插件-->
+            <plugin>
+                <groupId>com.github.wvengen</groupId>
+                <artifactId>proguard-maven-plugin</artifactId>
+                <version>2.2.0</version>
+                <executions>
+                    <execution>
+                        <!-- 打包的时候开始混淆-->
+                        <phase>package</phase>
+                        <goals>
+                            <goal>proguard</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <injar>${project.build.finalName}.jar</injar>
+                    <!--输出的jar-->
+                    <outjar>${project.build.finalName}.jar</outjar>
+                    <!-- 是否混淆-->
+                    <obfuscate>true</obfuscate>
+                    <options>
+                        <option>-target 1.8</option> <!--指定java版本号-->
+                        <option>-dontshrink</option> <!--默认开启，不做收缩（删除注释、未被引用代码）-->
+                        <option>-dontoptimize</option><!--默认是开启的，这里关闭字节码级别的优化-->
+                        <option>-adaptclassstrings</option><!--混淆类名之后，对使用Class.forName('className')之类的地方进行相应替代-->
+                        <option>-ignorewarnings
+                        </option><!-- 忽略warn消息,如果提示org.apache.http.* 这个包里的类有问题，那么就加入下述代码：-keep class org.apache.http.** { *; }    -dontwarn org.apache.http.**-->
+                        <option>-keep class org.apache.logging.log4j.util.* { *; }</option>
+                        <option>-dontwarn org.apache.logging.log4j.util.**</option>
+                        <option>-keepattributes
+                            Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*,EnclosingMethod
+                        </option><!--对异常、注解信息在runtime予以保留，不然影响springboot启动-->
+                        <!--不混淆所有interface接口-->
+                        <!--                        <option>-keepnames interface **</option>-->
+                        <option>-keepclassmembers enum * { *; }</option><!--保留枚举成员及方法-->
+                        <option>-keepparameternames</option>
+                        <option>-keepclasseswithmembers public class * {
+                            public static void main(java.lang.String[]);}
+                        </option> <!--保留main方法的类及其方法名-->
+                        <!--忽略note消息，如果提示javax.annotation有问题，那麽就加入以下代码-->
+                        <option>-dontnote javax.annotation.**</option>
+                        <option>-dontnote sun.applet.**</option>
+                        <option>-dontnote sun.tools.jar.**</option>
+                        <option>-dontnote org.apache.commons.logging.**</option>
+                        <option>-dontnote javax.inject.**</option>
+                        <option>-dontnote org.aopalliance.intercept.**</option>
+                        <option>-dontnote org.aopalliance.aop.**</option>
+                        <option>-dontnote org.apache.logging.log4j.**</option>
+
+                        <!--  ##### 以下为需要根据项目情况修改 ##### -->
+                        <!--入口程序类不能混淆，混淆会导致springboot启动不了-->
+                        <option>-keep class cn.grandtime.demo.DemoApplication</option>
+                        <option>-keep class cn.grandtime.demo.demo2.entity.* {*;}</option>
+                        <option>-keep class cn.grandtime.demo.demo2.controller.* {*;}</option>
+                        <option>-keep class cn.grandtime.demo.demo2.service.* {*;}</option>
+                        <!--                        <option>-keep class com.erbadagang.data.jpa.base.* {*;}</option>-->
+                        <!--                        <option>-keep class com.erbadagang.data.jpa.model.* {*;}</option>-->
+                        <!--  ##### 以上为需要根据项目情况修改 ##### -->
+
+                        <option>-keep interface * extends * { *; }</option>
+                        <!--不混淆所有类,保存原始定义的注释-->
+                        <option>-keepclassmembers class * {
+                            @org.springframework.beans.factory.annotation.Autowired *;
+                            @org.springframework.beans.factory.annotation.Value *;
+                            }
+                        </option>
+                    </options>
+                    <libs>
+                        <!-- 添加依赖 java8-->
+                        <lib>${java.home}/lib/rt.jar</lib>
+                        <lib>${java.home}/lib/jce.jar</lib>
+                    </libs>
+                </configuration>
+                <dependencies>
+                    <!-- https://mvnrepository.com/artifact/net.sf.proguard/proguard-base -->
+                    <dependency>
+                        <groupId>net.sf.proguard</groupId>
+                        <artifactId>proguard-base</artifactId>
+                        <version>6.1.1</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <!--Springboot repackage 打包-->
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <!-- spingboot 打包需要repackage否则不是可执行jar -->
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>cn.grandtime.demo.DemoApplication</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
+
 
     <repositories>
         <repository>
