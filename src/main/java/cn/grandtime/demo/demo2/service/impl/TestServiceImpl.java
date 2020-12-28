@@ -3,6 +3,7 @@ package cn.grandtime.demo.demo2.service.impl;
 import cn.grandtime.demo.demo2.dao.TestDao;
 import cn.grandtime.demo.demo2.entity.TestEntity;
 import cn.grandtime.demo.demo2.service.TestService;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,10 @@ public class TestServiceImpl extends ServiceImpl<TestDao, TestEntity> implements
 
     @Override
     public List<TestEntity> hello() {
+
+        this.list();
+        this.list(new LambdaQueryWrapper<TestEntity>().orderByDesc(TestEntity::getId));
+
         return testDao.hello();
     }
 }
