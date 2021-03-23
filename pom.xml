@@ -5,8 +5,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.3</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.4.4</version>
+        <relativePath/>
     </parent>
     <groupId>cn.grandtime</groupId>
     <artifactId>demo</artifactId>
@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>2020.0.1</spring-cloud.version>
+        <spring-cloud.version>2020.0.2</spring-cloud.version>
         <skipTests>true</skipTests>
     </properties>
 
@@ -25,7 +25,7 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.5.8</version>
+            <version>5.6.1</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
