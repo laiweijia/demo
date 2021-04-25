@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.4</version>
+        <version>2.4.5</version>
         <relativePath/>
     </parent>
     <groupId>cn.grandtime</groupId>
@@ -17,6 +17,7 @@
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>2020.0.2</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
         <skipTests>true</skipTests>
     </properties>
 
@@ -25,17 +26,17 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.6.1</version>
+            <version>5.6.3</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.75</version>
+            <version>1.2.76</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.2.5</version>
+            <version>1.2.6</version>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -88,7 +89,15 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <build>
