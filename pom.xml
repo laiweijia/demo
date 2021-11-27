@@ -17,7 +17,7 @@
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>2021.0.0-RC1</spring-cloud.version>
-        <spring-cloud-alibaba.version>2.2.6.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
         <skipTests>true</skipTests>
     </properties>
 
@@ -26,22 +26,22 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.6.3</version>
+            <version>5.7.16</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.76</version>
+            <version>1.2.78</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.2.6</version>
+            <version>1.2.8</version>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.4.2</version>
+            <version>3.4.3.4</version>
         </dependency>
 
         <!-- boot -->
@@ -92,7 +92,7 @@
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>{project-version}</version>
+                <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
