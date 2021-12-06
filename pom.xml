@@ -15,7 +15,7 @@
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>2021.0.0-RC1</spring-cloud.version>
+        <spring-cloud.version>2021.0.0</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
         <skipTests>true</skipTests>
     </properties>
@@ -111,26 +111,18 @@
         </plugins>
     </build>
 
-    <repositories>
-        <repository>
-            <id>dxhy</id>
-            <url>http://10.1.20.6:8081/nexus/content/groups/public/</url>
-        </repository>
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>dxhy</id>-->
+<!--            <url>http://10.1.20.6:8081/nexus/content/groups/public/</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>dxhy</id>
-            <url>http://10.1.20.6:8081/nexus/content/groups/public/</url>
-        </pluginRepository>
-    </pluginRepositories>
+<!--    <pluginRepositories>-->
+<!--        <pluginRepository>-->
+<!--            <id>dxhy</id>-->
+<!--            <url>http://10.1.20.6:8081/nexus/content/groups/public/</url>-->
+<!--        </pluginRepository>-->
+<!--    </pluginRepositories>-->
 
 </project>
