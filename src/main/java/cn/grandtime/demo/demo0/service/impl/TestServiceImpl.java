@@ -1,8 +1,8 @@
-package cn.grandtime.demo.demo2.service.impl;
+package cn.grandtime.demo.demo0.service.impl;
 
-import cn.grandtime.demo.demo2.dao.TestDao;
-import cn.grandtime.demo.demo2.entity.TestEntity;
-import cn.grandtime.demo.demo2.service.TestService;
+import cn.grandtime.demo.demo0.dao.TestDao;
+import cn.grandtime.demo.demo0.entity.TestEntity;
+import cn.grandtime.demo.demo0.service.TestService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

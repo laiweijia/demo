@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="cn.grandtime.demo.demo2.dao.TestDao">
+<mapper namespace="cn.grandtime.demo.demo0.dao.TestDao">
 
-    <select id="hello" resultType="cn.grandtime.demo.demo2.entity.TestEntity">
+    <select id="hello" resultType="cn.grandtime.demo.demo0.entity.TestEntity">
         SELECT * FROM test
     </select>
 

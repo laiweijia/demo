@@ -1,7 +1,7 @@
-package cn.grandtime.demo.demo2.service;
+package cn.grandtime.demo.demo0.service;
 
 
-import cn.grandtime.demo.demo2.entity.TestEntity;
+import cn.grandtime.demo.demo0.entity.TestEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;

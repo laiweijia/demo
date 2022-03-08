@@ -1,6 +1,6 @@
-package cn.grandtime.demo.demo2.controller;
+package cn.grandtime.demo.demo0.controller;
 
-import cn.grandtime.demo.demo2.service.TestService;
+import cn.grandtime.demo.demo0.service.TestService;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;

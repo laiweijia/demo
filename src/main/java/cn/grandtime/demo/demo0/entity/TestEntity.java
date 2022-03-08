@@ -1,4 +1,4 @@
-package cn.grandtime.demo.demo2.entity;
+package cn.grandtime.demo.demo0.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
