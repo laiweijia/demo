@@ -11,6 +11,11 @@ public class DemoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
+        System.out.println("====================================================================================================================\n" +
+                "\n" +
+                "                    启动成功，测试地址：http://localhost:8080/test/hello\n" +
+                "\n" +
+                "====================================================================================================================");
     }
 
 }
