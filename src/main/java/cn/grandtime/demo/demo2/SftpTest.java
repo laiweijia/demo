@@ -13,14 +13,11 @@ public class SftpTest {
     public static void main(String[] args) {
 
 
-
         Session session = JschUtil.getSession("10.1.2.87", 62236, "dxhy1", "dxhy");
         Sftp sftp = new Sftp(session);
         File file = new File("C:/Users/laiweijia/Pictures/2014-Toyota-Land-Cruiser-Prado-02.JPG");
         boolean b = sftp.upload("/data/image/laiweijia/", file);
         log.info(String.valueOf(b));
-
-
 
 
     }
