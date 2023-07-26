@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 import com.alibaba.druid.util.StringUtils;
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import org.apache.ibatis.annotations.Case;
 import org.apache.poi.xssf.usermodel.XSSFCell;
