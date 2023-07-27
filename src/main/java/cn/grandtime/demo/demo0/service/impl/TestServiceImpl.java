@@ -22,9 +22,7 @@ public class TestServiceImpl extends ServiceImpl<TestDao, TestEntity> implements
     @Override
     public List<TestEntity> hello() {
 
-        this.list();
-        this.list(new LambdaQueryWrapper<TestEntity>().orderByDesc(TestEntity::getId));
-
-        return testDao.hello();
+        return list(new LambdaQueryWrapper(TestEntity.class));
+        // return testDao.hello();
     }
 }
