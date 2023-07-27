@@ -4,7 +4,8 @@
 <mapper namespace="cn.grandtime.demo.demo0.dao.TestDao">
 
     <select id="hello" resultType="cn.grandtime.demo.demo0.entity.TestEntity">
-        SELECT * FROM test
+        SELECT *
+        FROM test
     </select>
 
 

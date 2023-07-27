@@ -6,12 +6,6 @@ import com.jcraft.jsch.Session;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 @Slf4j
 public class SftpTest {
