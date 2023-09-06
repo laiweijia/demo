@@ -24,7 +24,7 @@ public class TestController {
 
     @GetMapping("/hello")
     public List hello() {
-
+        log.info("请求了接口/hello");
         return testService.hello();
 
     }
