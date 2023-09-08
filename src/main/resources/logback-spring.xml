@@ -50,7 +50,7 @@
     </appender>
 
     <!-- 设置 Appender -->
-    <root level="INFO">
+    <root level="error">
         <appender-ref ref="console"/>
         <appender-ref ref="file"/>
         <appender-ref ref="grpc-log"/>
