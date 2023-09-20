@@ -25,7 +25,23 @@ public class TestController {
     @GetMapping("/hello")
     public List hello() {
         log.info("请求了接口/hello");
+
         return testService.hello();
+
+    }
+
+    @GetMapping("/error")
+    public String error() {
+        log.info("请求了接口/error");
+
+        String str = null;
+        try {
+            log.info(String.valueOf(str.charAt(0)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return str;
 
     }
 }
