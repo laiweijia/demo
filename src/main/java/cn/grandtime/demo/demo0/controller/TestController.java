@@ -35,11 +35,7 @@ public class TestController {
         log.info("请求了接口/error");
 
         String str = null;
-        try {
-            log.info(String.valueOf(str.charAt(0)));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        String.valueOf(str.charAt(0));
 
         return str;
 
