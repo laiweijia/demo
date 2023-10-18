@@ -1,3 +1,7 @@
+arthas:
+  tunnel-server: ws://127.0.0.1:7777/ws
+  agent-id: ${spring.application.name}${server.port}
+
 server:
   port: 8080
 

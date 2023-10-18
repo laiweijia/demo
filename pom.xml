@@ -52,10 +52,16 @@
             <artifactId>jsch</artifactId>
             <version>0.1.55</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.skywalking</groupId>
             <artifactId>apm-toolkit-logback-1.x</artifactId>
             <version>9.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.taobao.arthas</groupId>
+            <artifactId>arthas-spring-boot-starter</artifactId>
+            <version>3.7.1</version>
         </dependency>
 
 
